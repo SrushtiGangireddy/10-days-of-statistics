@@ -24,13 +24,13 @@ public class Solution {
 
         if (n%2 == 0) {
             int mid = n/2;
-            l = new int[mid-1];
-            u = new int[mid-1];
-            for (int j=0; j<(mid-1); j++) {
+            l = new int[mid];
+            u = new int[mid];
+            for (int j=0; j<(mid); j++) {
                 l[j] = nums[j];
             }
             int k = 0;
-            for(int j=(mid+1); j<n;j++){
+            for(int j=mid; j<n;j++){
                 u[k++] = nums[j];
             }
         } else {
@@ -45,6 +45,7 @@ public class Solution {
                 u[k++] = nums[j];
             }
         }
+
         int q1 = s.findMedian(l);
         int q3 = s.findMedian(u);
         System.out.println(q1);
